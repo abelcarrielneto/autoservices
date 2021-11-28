@@ -6,7 +6,7 @@ import lombok.NoArgsConstructor;
 import lombok.Setter;
 
 import javax.persistence.*;
-import java.math.BigDecimal;
+import javax.validation.constraints.NotNull;
 
 @Getter
 @Setter
@@ -22,7 +22,8 @@ public class ProdutoModel {
     private String nome;
     @Column(length = 50)
     private String marca;
-    @Column(length = 50)
+    @NotNull
     private int valor;
+    @NotNull
     private int quantidade;
 }
