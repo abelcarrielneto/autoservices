@@ -15,7 +15,7 @@ public class ProdutoController {
     @Autowired
     ProdutoRepository produtoRepository;
 
-    @GetMapping("/produto")
+    @GetMapping("/produtos")
     public List<ProdutoModel> listaPodutos(){
         return produtoRepository.findAll();
     }
@@ -27,7 +27,7 @@ public class ProdutoController {
 
     @PostMapping("/produto")
     public ProdutoModel salvarProduto(@RequestBody ProdutoModel produtoModel){
-        return this.produtoRepository.save (produtoModel);
+        return produtoRepository.save(produtoModel);
     }
 
     @PutMapping("/produto")
@@ -37,6 +37,6 @@ public class ProdutoController {
 
     @DeleteMapping ("/produto")
     public void deletaProduto (@RequestBody ProdutoModel produtoModel){
-        produtoRepository.delete (produtoModel);
+        produtoRepository.delete(produtoModel);
     }
 }
