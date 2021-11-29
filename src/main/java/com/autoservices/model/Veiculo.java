@@ -13,17 +13,13 @@ import javax.validation.constraints.NotNull;
 @Entity
 @NoArgsConstructor
 @AllArgsConstructor
-@Table(name="produto")
-public class Model {
+@Table(name="veiculo")
+public class Veiculo {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     private Long id;
     @Column(length = 50)
-    private String nome;
-    @Column(length = 50)
     private String marca;
-    @NotNull
-    private int valor;
-    @NotNull
-    private int quantidade;
+    @Column(length = 50)
+    private String modelo;
 }
