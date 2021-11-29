@@ -14,7 +14,7 @@ import javax.validation.constraints.NotNull;
 @NoArgsConstructor
 @AllArgsConstructor
 @Table(name="produto")
-public class ProdutoModel {
+public class Model {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     private Long id;
