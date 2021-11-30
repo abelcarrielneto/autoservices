@@ -1,7 +1,7 @@
 package com.autoservices.controller;
 
 import com.autoservices.model.Veiculo;
-import com.autoservices.repository.ProdutoRepository;
+import com.autoservices.repository.VeiculosRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
@@ -12,30 +12,30 @@ import java.util.Optional;
 @RequestMapping("/veiculos")
 public class VeiculosController {
     @Autowired
-    ProdutoRepository produtoRepository;
+    VeiculosRepository veiculosRepository;
 
     @GetMapping
     public List<Veiculo> lista(){
-        return produtoRepository.findAll();
+        return veiculosRepository.findAll();
     }
 
     @GetMapping("/{id}")
     public Optional<Veiculo> listaUnico(@PathVariable(value="id") Long id){
-        return produtoRepository.findById(id);
+        return veiculosRepository.findById(id);
     }
 
     @PostMapping
     public Veiculo salvar(@RequestBody Veiculo produtoVeiculo){
-        return produtoRepository.save(produtoVeiculo);
+        return veiculosRepository.save(produtoVeiculo);
     }
 
     @PutMapping
     public Veiculo atualizar(@RequestBody Veiculo produtoVeiculo){
-        return produtoRepository.save(produtoVeiculo);
+        return veiculosRepository.save(produtoVeiculo);
     }
 
     @DeleteMapping
     public void deleta(@RequestBody Veiculo produtoVeiculo){
-        produtoRepository.delete(produtoVeiculo);
+        veiculosRepository.delete(produtoVeiculo);
     }
 }
