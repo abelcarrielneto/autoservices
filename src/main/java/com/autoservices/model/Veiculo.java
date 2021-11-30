@@ -7,6 +7,7 @@ import lombok.Setter;
 
 import javax.persistence.*;
 import javax.validation.constraints.NotNull;
+import javax.validation.constraints.Size;
 
 @Getter
 @Setter
@@ -18,8 +19,12 @@ public class Veiculo {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     private Long id;
-    @Column(length = 50)
+
+    @Size(min = 3, max = 50)
+    @NotNull
     private String marca;
-    @Column(length = 50)
+
+    @Size(min = 3, max = 50)
+    @NotNull
     private String modelo;
 }
